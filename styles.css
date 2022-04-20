@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600&family=Montserrat:wght@900&family=Open+Sans&family=Pacifico&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat+Alternates:wght@500;600&family=Montserrat:wght@900&family=Open+Sans:wght@300;400&family=Pacifico&family=Roboto:wght@500&display=swap');
 
 * {
     margin: 0;
@@ -13,6 +13,9 @@
     --ruby: #D81E5B;
     --bone-1: #FFF8EB;
     --bone-2: #FDF0D5;
+    --light-purple: #7B61FF;
+    --dust-purple: #ECE0FE;
+    --blue-purple: #480CA8;
     --sweet-black: #333333;
     --logo-text-md: 28px;
     --section-size: 16px;
@@ -21,10 +24,11 @@
     --logo-md: 35px;
     --logo-lg: 52px;
     --lg-h1: 70px;
-    --sm-text: 11px;
-    --md-text: 15px;
-    --lg-text: 19px;
-    --xl-text: 23px;
+    --lg-h2: 35px;
+    --sm-text: 12px;
+    --md-text: 17px;
+    --lg-text: 22px;
+    --xl-text: 27px;
 
 }
 
@@ -118,6 +122,12 @@ h1.big-title {
     font-size: var(--lg-h1);
 }
 
+h2.subtitle {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
+    font-size: var(--lg-h2);
+}
+
 .main-intro > .text-container > p, .main-intro > .text-container > h1 {
     color: var(--light-peach);
 }
@@ -137,6 +147,7 @@ button.telaxia-button {
     cursor: pointer;
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 500;
+    font-size: var(--md-text);
 }
 
 button#open-in-web {
@@ -148,7 +159,7 @@ button#open-in-web {
     padding: 10px 20px;
 }
 
-button#open-in-web span {
+button#open-in-web span,  button#open-in-github span {
     margin: 6px;
 }
 
@@ -159,6 +170,7 @@ button#open-in-web span {
 .img-container {
     display: flex;
     margin-top: 30px;
+    
 }
 
 .img-container.center {
@@ -169,29 +181,85 @@ main {
     height: 100vh;
 }
 
-#services {
+#services-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-#services .service-container:nth-child(odd) {
     background-color: var(--bone-1);
 }
-#services .service-container:nth-child(even) {
+
+#services-section .services .service-container:nth-child(odd) {
+    background-color: var(--bone-1);
+}
+#services-section .services .service-container:nth-child(even)  {
     background-color: var(--bone-2);
 }
 
-#services .service-container:nth-child(1) {
-    height: 100px;
+.service-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
 }
 
-#services .service-container:nth-child(1) h1.big-title {
+
+#services-section .services .service-container:nth-child(1) {
+    flex-direction: row;
+}
+
+#services-section .services .service-container:nth-child(2) {
+    flex-direction: row-reverse;
+}
+
+#services-section .services .service-container:nth-child(3) {
+    padding-top: 30px;
+    flex-direction: column-reverse;
+}
+
+#services-section .services .service-container:nth-child(1) img {
+    width: 500px;
+}
+
+#services-section .services .service-container:nth-child(2) img {
+    width: 400px;
+}
+
+#services-section .services .service-container:nth-child(3) img {
+    width: 500px;
+}
+
+
+.service-container .text-container {
+    font-weight: 300;
+}
+
+.service-container .text-container p {
+    margin-top: 10px;
+}
+
+#services-section h1.big-title {
     color: var(--sweet-black);
-    text-align: center;
     margin: 10px;
 }
 
+#about-us-section {
+    background-color: var(--light-purple);
+}
+
+#about-us-section {
+    color: var(--dust-purple);
+}
+
+#open-in-github {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-purple);
+    padding: 10px 20px;
+    color: var(--dust-purple);
+    font-size: ;
+}
 
 @media (max-width: 767px) {
     .section-container {
