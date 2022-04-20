@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500;600&family=Montserrat:wght@900&family=Open+Sans&family=Pacifico&family=Roboto:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --light-peach: #FFE2E2;
+    --salmon-2: #EF574E;
+    --ducky-yellow: #FFE248;
+    --ruby: #D81E5B;
+    --bone-1: #FFF8EB;
+    --bone-2: #FDF0D5;
+    --sweet-black: #333333;
+    --logo-text-md: 28px;
+    --section-size: 16px;
+    --empty-logo: 153.81px;
+    --logo-sm: 18px;
+    --logo-md: 35px;
+    --logo-lg: 52px;
+    --lg-h1: 70px;
+    --sm-text: 11px;
+    --md-text: 15px;
+    --lg-text: 19px;
+    --xl-text: 23px;
+
+}
+
+
+header {
+    height: 100vh;
+    background-color: var(--salmon-2);
+}
+
+.empty-nav {
+    width: var(--empty-logo);
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav .nav-bar-items {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7vw;
+}
+
+span.elegant-yellow {
+    color: var(--ducky-yellow);
+    font-family: 'Pacifico', cursive;
+    font-size: var(--xl-text);
+}
+
+.logo-sm {
+    width: var(--logo-sm);
+}
+
+.logo-md {
+    width: var(--logo-md);
+}
+
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    color: var(--light-peach);
+    font-size: var(--logo-text-md);
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 600;
+}
+
+.logo-container img {
+    margin-right: 10px;
+}
+
+.section-container {
+    display: flex;
+    justify-content: center;
+    width: 40vw;
+}
+
+.section-container ul > li {
+    display: inline;
+}
+
+.section-container ul > li > a {
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 0 10px;
+    font-weight: 500;
+}
+
+.text-container {
+    font-family: 'Open Sans', sans-serif;
+    font-size: var(--lg-text);
+}
+
+.main-intro {
+    margin-top: 20px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+h1.big-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
+    font-size: var(--lg-h1);
+}
+
+.main-intro > .text-container > p, .main-intro > .text-container > h1 {
+    color: var(--light-peach);
+}
+
+.main-intro > .text-container > p {
+    margin-top: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button.telaxia-button {
+    border-radius: 23.17px;
+    border-style: none;
+    cursor: pointer;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 500;
+}
+
+button#open-in-web {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    background-color: var(--ruby);
+    color: white;
+    padding: 10px 20px;
+}
+
+button#open-in-web span {
+    margin: 6px;
+}
+
+.main-intro .img-container img {
+    width: 85%;
+}
+
+.img-container {
+    display: flex;
+    margin-top: 30px;
+}
+
+.img-container.center {
+    justify-content: center;
+}
+
+main {
+    height: 100vh;
+}
+
+#services {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#services .service-container:nth-child(odd) {
+    background-color: var(--bone-1);
+}
+#services .service-container:nth-child(even) {
+    background-color: var(--bone-2);
+}
+
+#services .service-container:nth-child(1) {
+    height: 100px;
+}
+
+#services .service-container:nth-child(1) h1.big-title {
+    color: var(--sweet-black);
+    text-align: center;
+    margin: 10px;
+}
+
+
+@media (max-width: 767px) {
+    .section-container {
+        display: none;
+    }
+    .nav-bar-items {
+        display: flex;
+        justify-content: center;
+    }
+    .empty-nav {
+        display: none;
+    }
+    .logo-container {
+        margin-right: 0;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    
+}
+
+@media (min-width: 1200px) {
+    
+}
