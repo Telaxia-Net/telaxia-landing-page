@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat+Alternates:wght@500;600&family=Montserrat:wght@900&family=Open+Sans:wght@300;400&family=Pacifico&family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Gothic+A1&family=Montserrat+Alternates:wght@500;600;700&family=Montserrat:wght@600;900&family=Open+Sans:wght@300;400&family=Oxygen:wght@300;400;700&family=Pacifico&family=Roboto:wght@500&display=swap');
 
 * {
     margin: 0;
@@ -11,12 +11,17 @@
     --salmon-2: #EF574E;
     --ducky-yellow: #FFE248;
     --ruby: #D81E5B;
+    --ruby-2: #F32761;
     --bone-1: #FFF8EB;
     --bone-2: #FDF0D5;
     --light-purple: #7B61FF;
     --dust-purple: #ECE0FE;
     --blue-purple: #480CA8;
+    --dark-purple: #391D5D;
     --sweet-black: #333333;
+    --green-dark-blue: #3E708B;
+    --gray-600: #A5ADBB;
+    --gray-200: #EBECED;
     --logo-text-md: 28px;
     --section-size: 16px;
     --empty-logo: 153.81px;
@@ -32,9 +37,67 @@
 
 }
 
+li {
+    list-style: none;
+}
+
+.card {
+    display: inline-block;
+    border-radius: 17px;
+    padding: 25px 20px;
+}
+
+.card h3.card-name {
+    font-family: Montserrat,"sans-serif";
+}
+.card h2 {
+    font-family: Montserrat Alternates,"sans-serif";
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.card ul {
+    margin: 20px 0px 20px 0;
+}
+.card li {
+    font-family: 'Oxygen', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    margin: 20px 0;
+}
+
+.card li span {
+    display: inline-block;
+    margin-left: 5px;
+}
+
+.card li.not-include {
+    color: var(--gray-600);
+}
+
+.card.free button {
+    background-color: var(--ruby-2);
+    color: var(--bone-2);
+    padding: 10px 30%;
+}
+
+.card.free {
+    background-color: var(--bone-2);
+}
+
+.card.pay button {
+    background-color: var(--green-dark-blue);
+    color: var(--bone-2);
+    padding: 10px 30%;
+}
+
+.card.pay {
+    color: var(--gray-200);
+    background-color:var(--dark-purple) ;
+}
 
 header {
-    height: 100vh;
+    height: 100%;
     background-color: var(--salmon-2);
 }
 
@@ -46,6 +109,7 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 10%;
 }
 
 nav .nav-bar-items {
@@ -164,7 +228,9 @@ button#open-in-web span,  button#open-in-github span {
 }
 
 .main-intro .img-container img {
-    width: 85%;
+    width: 70%;
+    max-width: 1200px;
+    margin-bottom: 30px;
 }
 
 .img-container {
@@ -186,6 +252,7 @@ main {
     flex-direction: column;
     justify-content: center;
     background-color: var(--bone-1);
+    height: auto;
 }
 
 #services-section .services .service-container:nth-child(odd) {
@@ -229,6 +296,11 @@ main {
     width: 500px;
 }
 
+#services-section .services .service-container, #about-us-section {
+    padding: 40px 0;
+}
+
+
 
 .service-container .text-container {
     font-weight: 300;
@@ -258,10 +330,68 @@ main {
     background-color: var(--blue-purple);
     padding: 10px 20px;
     color: var(--dust-purple);
-    font-size: ;
+    font-size: var(--md-text);
+}
+
+#plans-section {
+    padding-top: 60px;
+    background-color: var(--blue-purple);
+}
+
+#plans-section > .text-container {
+    color: var(--dust-purple);
+    margin-bottom: 40px;
+}
+
+#plans-section > .text-container p {
+    margin-top: 20px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 90px;
+}
+
+#for-designers > h3, #for-buyers > h3  {
+    font-family: Montserrat, "sans-serif";
+    color: white;
+    font-weight: 600;
+    font-size: 2.4rem;
+    margin-bottom: 30px;
+}
+
+#for-buyers {
+    padding-bottom: 10px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    background-color: #18181C;
+    font-family: "Gothic A1";
+    padding: 20px;
+}
+
+@media (min-height: 768px) {
+    header {
+        height: 100vh;
+        background-color: var(--salmon-2);
+    }
 }
 
 @media (max-width: 767px) {
+
+    .cards-container {
+        flex-direction: column;
+        gap: 20px;
+        margin-bottom: 90px;
+        align-items: center;
+    }
+
     .section-container {
         display: none;
     }
@@ -275,13 +405,89 @@ main {
     .logo-container {
         margin-right: 0;
     }
+    #services-section .services .service-container:nth-child(1),
+    #services-section .services .service-container:nth-child(2),
+    #services-section .services .service-container:nth-child(3) {
+        flex-direction: column;
+    }
+
+    #services-section .services .service-container:nth-child(1) img,
+    #services-section .services .service-container:nth-child(2) img,
+    #services-section .services .service-container:nth-child(3) img {
+        width: 380px;
+    }
+
+    #services-section .services .service-container:nth-child(1) .text-container br,
+    #services-section .services .service-container:nth-child(2) .text-container br
+    #services-section .services .service-container:nth-child(3) .text-container br {
+        display: none;
+    }
+    #services-section .services .service-container:nth-child(1) .text-container,
+    #services-section .services .service-container:nth-child(2) .text-container,
+    #services-section .services .service-container:nth-child(3) .text-container {
+        text-align: center;
+    }
+
+    .main-intro {
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 90%;
+    }
+
+    .main-intro .text-container, .service-container .text-container, #about-us-section .text-container {
+        font-size: 1rem;
+    }
+    
+    #services-section .services .service-container, #about-us-section {
+        padding: 0;
+    }
+    
+
+    #services-section > h1,
+    #about-us-section .text-container h1 {
+        font-size: 3.2rem;
+    }
+
+
+
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
+    
+    #for-designers .cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px 20px;
+        margin-bottom: 80px;
+    }
 
+    .cards-container .card:nth-child(odd) {
+        justify-self: end;
+    }
+    .cards-container .card:nth-child(even) {
+        justify-self: start;
+    }
+    
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
+    #for-designers .cards-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px 20px;
+        margin-bottom: 80px;
+    }
+
+    .cards-container .card:nth-child(odd) {
+        justify-self: end;
+    }
+    .cards-container .card:nth-child(even) {
+        justify-self: start;
+    }
     
 }
 
