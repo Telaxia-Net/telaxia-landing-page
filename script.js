@@ -12,7 +12,7 @@ class PayDesignersPlan {
         this.price = price;
         this.maxMembers = maxMembers;
         this.maxProjects = maxProjects;
-        this.benefits = [...[new Benefit(`Includes ${this.maxProjects} Projects`, true), new Benefit(`Includes ${this.maxMembers} Members`, true)], ...benefits];
+        this.benefits = [...[new Benefit(`Includes ${maxProjects} Projects`, true), new Benefit(`Includes ${maxMembers} Members`, true)], ...benefits];
     }
     // benefits.unshift(`Includes ${this.maxProjects} Projects`, true);
 }
@@ -24,6 +24,35 @@ class PayBuyersPlan {
     }
 }
 
+var buttonOpenInWebBrowser =  document.getElementById("open-in-web");
+var buttonLogoOpenInWebBrowser = buttonOpenInWebBrowser.getElementsByTagName("img")[0];
+
+
+buttonOpenInWebBrowser.onmouseover = (event) => {
+    event.preventDefault();
+    buttonLogoOpenInWebBrowser.src = "./images/svg/telaxia-logo-ruby.svg"
+} 
+
+buttonOpenInWebBrowser.onmouseleave = (event) => {
+    event.preventDefault();
+    buttonLogoOpenInWebBrowser.src = "./images/svg/telaxia-logo-white.svg"
+} 
+
+
+var buttonGithub =  document.getElementById("open-in-github");
+var buttonLogoGithub = document.querySelector("#open-in-github.telaxia-button img");
+
+
+buttonGithub.onmouseover = (event) => {
+    event.preventDefault();
+    buttonLogoGithub.src = "./images/svg/github-logo-blue-purple.svg"
+} 
+
+buttonGithub.onmouseleave = (event) => {
+    event.preventDefault();
+    buttonLogoGithub.src = "./images/svg/github-logo.svg"
+} 
+
 
 function main() {
 
@@ -33,8 +62,8 @@ function main() {
         maxProjects: 3,
         maxMembers: 4,
         benefits: [
-            new Benefit(`Includes ${this.maxProjects} Projects`, true),
-            new Benefit(`Includes ${this.maxMembers} Members`, true),
+            new Benefit(`Includes 3 Projects`, true),
+            new Benefit(`Includes 4 Members`, true),
             new Benefit("Visualize public posts", true),
             new Benefit("Make private designs", false),
             new Benefit("See who checks your profile", false),
@@ -87,6 +116,11 @@ function main() {
     for (let i = 0; i < plans.length; i++) {
         cardsFree[i].getElementsByTagName("h3")[0].innerText = plans[i].name;
         cardsFree[i].getElementsByClassName("price")[0].innerText = `$ ${plans[i].price} / month`
+        if(i < plans.length - 2) {
+            cardsFree[i].querySelectorAll("ul.benefits li")[0].getElementsByTagName("span")[0].innerText = plans[i].benefits[0].benefitDescription;
+            cardsFree[i].querySelectorAll("ul.benefits li")[1].getElementsByTagName("span")[0].innerText = plans[i].benefits[1].benefitDescription;
+        }
+        cardsFree[i].getElementsByClassName("price")
         for (let j = 0; j < plans[i].benefits.length; j++) {
             if (!plans[i].benefits[j].state) {
                 cardsFree[i].getElementsByTagName("li")[j].style.color = "#A5ADBB";

@@ -81,6 +81,11 @@ li {
     padding: 10px 30%;
 }
 
+.card.free button:hover {
+    background-color: var(--dust-purple);
+    color: var(--ruby-2);
+}
+
 .card.free {
     background-color: var(--bone-2);
 }
@@ -89,6 +94,10 @@ li {
     background-color: var(--green-dark-blue);
     color: var(--bone-2);
     padding: 10px 30%;
+}
+.card.pay button:hover {
+    background-color: var(--bone-2);
+    color: var(--green-dark-blue);
 }
 
 .card.pay {
@@ -165,6 +174,7 @@ span.elegant-yellow {
     font-size: 14px;
     margin: 0 10px;
     font-weight: 500;
+    transition: color 0.2s ease-in-out;
 }
 
 .text-container {
@@ -212,6 +222,7 @@ button.telaxia-button {
     font-family: 'Montserrat Alternates', sans-serif;
     font-weight: 500;
     font-size: var(--md-text);
+    transition: background-color 0.3s ease-in-out;
 }
 
 button#open-in-web {
@@ -452,6 +463,31 @@ footer {
 
 
 
+}
+
+/* Animations */
+.section-container > ul > li > a:hover {
+    /* color: var(--ruby); */
+    color: #333333;
+}
+
+button#open-in-web:hover {
+    background-color: white;
+    color: var(--ruby);
+
+}
+
+#about-us-section .img-container .logo-telaxia {
+    transition: all 0.9s ease-in;
+}
+
+#about-us-section .img-container .logo-telaxia:hover {
+    transform: rotateZ(720deg);
+}
+
+#open-in-github:hover {
+    background-color: var(--dust-purple);
+    color: var(--blue-purple);
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
