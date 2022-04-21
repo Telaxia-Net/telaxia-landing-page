@@ -368,12 +368,12 @@ main {
 
 
 footer {
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     color: white;
     background-color: #18181C;
     font-family: "Gothic A1";
-    padding: 20px;
 }
 
 @media (min-height: 768px) {
